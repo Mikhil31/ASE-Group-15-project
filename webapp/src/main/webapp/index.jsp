@@ -1,56 +1,20 @@
-import java.util.Scanner;
+public class Main {
 
-class Main {
   public static void main(String[] args) {
 
-    char operator;
-    Double number1, number2, result;
-
-    // create an object of Scanner class
-    Scanner input = new Scanner(System.in);
-
-    // ask users to enter operator
-    System.out.println("Choose an operator: +, -, *, or /");
-    operator = input.next().charAt(0);
-
-    // ask users to enter numbers
-    System.out.println("Enter first number");
-    number1 = input.nextDouble();
-
-    System.out.println("Enter second number");
-    number2 = input.nextDouble();
-
-    switch (operator) {
-
-      // performs addition between numbers
-      case '+':
-        result = number1 + number2;
-        System.out.println(number1 + " + " + number2 + " = " + result);
+    int num = 29;
+    boolean flag = false;
+    for (int i = 2; i <= num / 2; ++i) {
+      // condition for nonprime number
+      if (num % i == 0) {
+        flag = true;
         break;
-
-      // performs subtraction between numbers
-      case '-':
-        result = number1 - number2;
-        System.out.println(number1 + " - " + number2 + " = " + result);
-        break;
-
-      // performs multiplication between numbers
-      case '*':
-        result = number1 * number2;
-        System.out.println(number1 + " * " + number2 + " = " + result);
-        break;
-
-      // performs division between numbers
-      case '/':
-        result = number1 / number2;
-        System.out.println(number1 + " / " + number2 + " = " + result);
-        break;
-
-      default:
-        System.out.println("Invalid operator!");
-        break;
+      }
     }
 
-    input.close();
+    if (!flag)
+      System.out.println(num + " is a prime number.");
+    else
+      System.out.println(num + " is not a prime number.");
   }
 }
